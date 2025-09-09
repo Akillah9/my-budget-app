@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 85%;
+}
+
+body {
+	color: rgb(44, 49, 40);
+	color: color(display-p3 0.192 0.184 0.157);
+	color: oklch(30.5% 0.014 91.472);
+
+	background: rgb(197, 220, 236);
+	/* background: color(display-p3 1 0.784 0.2);
+	background: oklch(86% 0.188 85.077); */
+
+	font-family: "Comic Neue", cursive, sans-serif;
+
+	padding: 2rem;
+
+	max-width: 48rem;
+	margin: 0 auto;
+}
+
+strong,
+em {
+	color: rgb(255, 204, 64);
+	color: color(display-p3 1 0.784 0.2);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+}
+
+h3 {
+	font-size: 1.75rem;
+}
+
+/**
+ * MEDIA QUERIES
+ */
+@media screen and (min-width: 700px) {
+	html {
+		font-size: 100%;
+	}
+}
+
+#inputs-container {
+  display: flex;
+  gap: 8rem;       /* mezera mezi sloupci */
+  margin: 2rem 0;  /* odsazení nahoře a dole */
+}
+
+#income-column,
+#spendings-column {
+  flex: 1;               /* oba sloupce mají stejnou šířku */
+}
+
+#income-column h3,
+#spendings-column h3 {
+  text-align: left;    /* nadpis uprostřed */
+  margin-bottom: 1rem;   /* mezera pod nadpisem */
+}
+
+input::placeholder {
+  text-align: center;
+}
+
+input {
+  text-align: center; /* aby i uživatelský text byl uprostřed */
+}
+
+.field {
+    margin-bottom: 0.5rem; /* nebo 1.5rem, podle toho, jak moc chceš */
+}

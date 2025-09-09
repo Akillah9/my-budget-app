@@ -1,0 +1,26 @@
+header {
+	/* left: 20px; */
+	text-align: center;
+	position: relative;
+	top: 5px;
+	background-color: #dc7e7e; /* světle šedé pozadí */
+    padding: 1rem; /* trochu prostoru uvnitř */
+}
+
+.title {
+    color: #08492b;
+}
+
+.title {
+    margin-bottom: 1rem;  /* mezera pod h1 */
+}
+
+.subtitle {
+    margin-top: 0;        /* volitelné, aby nebylo víc než chceš */
+	margin-bottom: 3rem;
+}
+
+header img {
+	max-width: 55%;
+	/* vertical-align: bottom; */
+}

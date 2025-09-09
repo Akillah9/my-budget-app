@@ -1,0 +1,122 @@
+.cards ul {
+	color: white;
+	list-style: none;
+	margin-top: 0;
+	padding-left: 0;
+}
+
+.cards ul>li {
+	font-size: 1.25rem;
+
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	gap: 0.65rem 0;
+
+	background: #312f27;
+	background: color(display-p3 0.192 0.184 0.157);
+	background: oklch(79.102% 0.01935 138);
+
+	margin-bottom: 1.5rem;
+	padding: 1.5rem;
+
+	border-radius: 1rem;
+	border: 0.2em solid #7f7b74;
+
+	position: relative;
+}
+
+.cards ol>li::marker {
+	color: oklch(70% 0.014 91.472);
+}
+
+.cards img {
+	width: 100%;
+	border-radius: 0.35rem;
+}
+
+.cards p {
+	margin-bottom: 0;
+}
+
+
+
+/**
+ * ICONS
+ */
+.cards h3 {
+	background-repeat: no-repeat;
+	/* background-size: contain; */
+	background-size: 2.35rem;
+	/* background-position: 0 50%; */
+	padding-left: 3rem;
+	/* white-space: nowrap; */
+}
+
+.cards h3 {
+	/* default */
+	background-image: url("../images/icon-playdate-sdk.svg");
+}
+
+.sdk h3 {
+	background-image: url("../images/icon-playdate-sdk.svg");
+}
+
+.caps h3 {
+	background-image: url("../images/icon-playdate-caps.png");
+}
+
+.inside h3 {
+	background-image: url("../images/icon-inside-playdate.png");
+}
+
+/**
+ * CONTROLS
+ */
+.delete-button {
+	display: inline-block;
+	width: 1.75em;
+	height: 1.75em;
+	line-height: 1.65em;
+
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 50%;
+	text-decoration: none;
+
+	cursor: pointer;
+	background-color: #ff5252;
+
+	position: absolute;
+	top: -0.5em;
+	right: -0.5em;
+
+	box-shadow: 1px 1px white;
+}
+
+.delete-button:hover {
+	background-color: #ff1a1a;
+}
+
+[contenteditable="true"] {
+	outline-color: rgba(255, 255, 255, 0.153);
+	outline-width: 4px;
+	outline-style: solid;
+	background: #33333346;
+}
+
+
+/**
+ * MEDIA QUERIES
+ */
+@media screen and (min-width: 700px) {
+	.cards ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem 1.5rem;
+	}
+
+	.cards ul>li {
+		margin-bottom: 0;
+	}
+}
