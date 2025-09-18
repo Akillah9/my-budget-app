@@ -14,13 +14,13 @@
 
 	background: #312f27;
 	background: color(display-p3 0.192 0.184 0.157);
-	background: oklch(79.102% 0.01935 138);
+	background: oklch(77.4% 0.0043 286);
 
 	margin-bottom: 1.5rem;
 	padding: 1.5rem;
 
 	border-radius: 1rem;
-	border: 0.2em solid #7f7b74;
+	border: 0.2rem solid #7f7b74;
 
 	position: relative;
 }

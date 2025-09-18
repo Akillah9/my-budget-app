@@ -1,157 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-	<style>
-.budgetInfo {
-  border: 6px outset rgb(10, 71, 25);
-  background-color: rgb(168, 209, 181);    
-  text-align: center;
-}
-</style>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>Check your budget</title>
+	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+					<!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> -->
 	
+
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" href="./css/app.css">
 	<link rel="stylesheet" href="./css/header.css">
 	<link rel="stylesheet" href="./css/cards.css">
+	<link rel="stylesheet" href="./css/forms.css">
+	<link rel="stylesheet" href="./css/fonts.css">
+	<link rel="icon" href="images/calculator-color.png"> <!-- Favicon -->
 
 	<script defer src="./js/main.js"></script>
 </head>
 
 <body>
-
-	<style>
-		body 	{
- 		/* background-image: url("images/v991-n-26.jpg"); */
-		/* opacity: 0.3; 0 = úplně průhledný, 1 = plně viditelný */
-		background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("images/istockphoto-988756328-612x612.jpg");
-    	background-size: cover;
-    	background-position: center;
-		}
-	</style>
-
-	<!-- <header>
-		<img src="./images/header-playdate-dev.png" alt="anyone can make games">
-	</header> -->
-
-	<main>
-		
-		<div class="budgetInfo">
-  			<h1 class="title">Check your budget</h1>
-  			<h2 class="subtitle">Welcome to this page, which will help you get your finances in order. Based on the data you provide, I will offer you various recommendations on what you can do to improve your financial well-being.<br>It is divided into several steps, so just get started.</p>
-
-		</div>
+	<div class="page-container">
+		<main>
 			
-		<br>
-		<br>
-		<h1>Now it’s your turn!</h1>
-		<br>
-		<h2>1. Tell me how much money flows in every month and how much flows out.
-I’ll then show you how you’re really doing. 😉</h2>
+			<div class="budgetInfo">
+				<h1 class="title">Check your budget</h1>
+				<h2 class="subtitle">Welcome to this page, which will help you get your finances in order. Based on the data you provide, I will offer you various recommendations on what you can do to improve your financial well-being.<br>It is divided into several steps, so just get started.</p>
+			</div>
+				
+			<br>
+			<br>
+			<h1>Now it’s your turn!</h1>
+			<br>
+			<h2>1. Tell me how much money flows in every month and how much flows out.
+	I’ll then show you how you’re really doing. 😉</h2>
 
-
-		<!-- <div class="field">
-  			<p class="control has-icons-left has-icons-right">
-    			<input class="input" type="number" id="income" placeholder="Income" />
-    			<span class="icon is-small is-left">
-      				<i class="fas fa-money"></i>
-    			</span>
-
-    			<span class="icon is-small is-right">
-      				<i class="fas fa-check"></i>
-    			</span>
-  			</p>
-		</div> -->
-
-		<div id="inputs"></div>
-		<!-- <div class="field">
-  			<p class="control has-icons-left">
-    			<input class="input" type="number" id="spendings1" placeholder="Spendings in Jan" />
-    			<span class="icon is-small is-left">
-      				<i class="fas fa-coin"></i>
-    			</span>
-  			</p>
-		</div>
-
-		<div class="field">
-  			<p class="control has-icons-left">
-    			<input class="input" type="number" id="spendings2" placeholder="Spendings in Feb" />
-    			<span class="icon is-small is-left">
-      				<i class="fas fa-coin"></i>
-    			</span>
-  			</p>
-		</div> -->
-
-		<div id="inputs-container">
-  			<div id="income-column">
-    			<h3>Income</h3>
-  			</div>
-  			<div id="spendings-column">
-    			<h3>Spendings</h3>
-  			</div>
-		</div>
-
-		<button id="calculate" class="button">Calculate</button>
-		<br>
-		<br>
-		<h2>Your average monthly budget is: <span id="result">0 Kč</span></h2>
-		<br>
-
-
-		<!-- <div class="columns">
-  			<div class="column">
-    			<p class="bd-notification is-info">First column</p>
-    			<div class="columns is-mobile">
-      				<div class="column">
-        				<p class="bd-notification is-info">First nested column</p>
-      				</div>
-      			<div class="column">
-        			<p class="bd-notification is-info">Second nested column</p>
-      			</div>
-    		</div>
-  		</div> -->
-			
-    	
-
-
-		
-		<section class="cards">
-			<ul class="card-list">
-				<li class="sdk">
-					<h3>Spendings graf</h3>
-					<div id="chart-container" style="width: 400px; height: 400px;">
-  						<canvas id="myChart"></canvas>
+			<div id="inputs"></div>
+					
+			<div class="columns">
+    			<!-- levá část: Income + Spendings + tlačítko -->
+    			<div class="left-column">
+					<div class="income-spendings">
+						<div id="income-column">
+							<h3>Income</h3>
+							<br>
+						</div>
+						<div id="spendings-column">
+							<h3>Spendings</h3>
+							<br>
+						</div>
 					</div>
-				</li>
-
-				<!-- <li class="inside">
-					<h3>Inside Playdate</h3>
-
-					<p>
-						Reference documentation for programming Playdate games.
-						Covers both <strong>Lua</strong> and <strong>C</strong> programming.
-					</p>
-				</li>
-
-				<li class="caps">
-					<h3>Caps</h3>
-
-					<p>
-						Bitmap font editor for Playdate fonts—draw your own characters,
-						import desktop fonts, kern and preview them.
-					</p>
-				</li> -->
-
-			</ul>
-		</section>
-	</main>
-<!-- <script src="./js/main.js"></script> -->
+					<button id="calculate" class="button"><strong>📊 Calculate</strong></button>
+				</div>
+				
+				<div class="right-column">
+					<div id="cards-column">
+						<h3>Your average monthly budget is: <span id="result">0 Kč</span></h3>
+						<br>
+						<section class="cards">
+							<ul class="card-list">
+								<li class="sdk">
+									<h3>Spendings graf</h3>
+									<div id="chart-container">
+										<canvas id="myChart"></canvas>
+									</div>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</div>			
+	
+		</main>
+	 </div>
+							<!-- <script src="./js/main.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
 </body>
 

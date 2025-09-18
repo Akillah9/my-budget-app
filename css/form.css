@@ -1,5 +1,26 @@
-input,
-button {
+.input {
+	width: 100%;            /* zabere celou šířku sloupce */
+  padding: 0.5rem;        /* odsazení uvnitř pole */
+  font-size: 1rem;        /* velikost písma */
+  text-align: center;     /* zarovnání textu uprostřed */
+  color: #f5f5f5;         /* barva textu */
+  background-color: #1b263b; /* tmavé pozadí */
+  border: 2px solid #2a5298;
+  border-radius: 0.5rem;
+}
+
+.input::placeholder {
+  color: #a0a0a0;         /* barva placeholderu */
+  text-align: center;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #476192;
+  box-shadow: 0 0 5px #476192;
+}
+
+/* button {
 	font-family: inherit;
 	font-size: 1rem;
 
@@ -32,4 +53,4 @@ button:focus,
 button:active {
 	background: #444;
 	box-shadow: 4px 4px 0 #f9b331;
-}
+} */

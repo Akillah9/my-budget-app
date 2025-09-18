@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const incomeContainer = document.getElementById("income-column");
     const spendingsContainer = document.getElementById("spendings-column");
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+    const months = ['Apr', 'May', 'Jun', 'Jul', 'Aug'];
 
     months.forEach((month, index) => {
         const divIncome = document.createElement("div");
@@ -120,26 +120,28 @@ document.addEventListener("DOMContentLoaded", function() {
     let myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                responsive: true,
+                maintainAspectRatio: false,
                 datasets: [
                 {
                     label: 'Income',
                     // data: [0, 0, 0, 0, 0, 0, 0], // počáteční data
-                    data: Array(7).fill(0),
+                    data: Array(5).fill(0),
                     borderColor: 'rgb(34, 197, 25)',
                     backgroundColor: 'rgba(34, 197, 25, 0.5)',
-                    borderWidth: 1                    
-                    // tension: 0.1
+                    borderWidth: 1,                    
+                    tension: 0.4,
                 },
              
                 {
                     label: 'Spendings',
                     // data: [0, 0, 0, 0, 0, 0, 0], // počáteční data
-                    data: Array(7).fill(0),
+                    data: Array(5).fill(0),
                     borderColor: 'rgb(197, 25, 34)',
                     backgroundColor: 'rgba(197, 25, 34, 0.5)',
-                    borderWidth: 1
-                    // tension: 0.1
+                    borderWidth: 1,
+                    tension: 0.4,
                 }
             ]
         },
@@ -161,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let incomeValues = [];
         let spendingsValues = [];
-        for (let i = 1; i <= 7; i++) {
+        for (let i = 1; i <= 5; i++) {
             incomeValues.push(Number(document.getElementById(`income${i}`).value));
             spendingsValues.push(Number(document.getElementById(`spendings${i}`).value));
         }

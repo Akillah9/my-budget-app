@@ -1,81 +1,116 @@
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-html {
-	font-size: 85%;
-}
-
+/* Celá stránka */
 body {
-	color: rgb(44, 49, 40);
-	color: color(display-p3 0.192 0.184 0.157);
-	color: oklch(30.5% 0.014 91.472);
-
-	background: rgb(197, 220, 236);
-	/* background: color(display-p3 1 0.784 0.2);
-	background: oklch(86% 0.188 85.077); */
-
-	font-family: "Poppins", sans-serif;
-
-	padding: 2rem;
-
-	max-width: 48rem;
-	margin: 0 auto;
-}
-
-strong,
-em {
-	color: rgb(255, 204, 64);
-	color: color(display-p3 1 0.784 0.2);
-}
-
-h1,
-h2,
-h3,
-h4 {
-	margin: 0;
-}
-
-h3 {
-	font-size: 1.75rem;
-}
-
-/**
- * MEDIA QUERIES
- */
-@media screen and (min-width: 700px) {
-	html {
-		font-size: 100%;
-	}
-}
-
-#inputs-container {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0d1b2a, #476192); /* moderní tmavě modrý přechod */
+  color: #f5f5f5;
+  /* min-height: 100vh;
   display: flex;
-  gap: 8rem;       /* mezera mezi sloupci */
-  margin: 2rem 0;  /* odsazení nahoře a dole */
+  justify-content: center;
+  align-items: flex-start; */
 }
 
-#income-column,
-#spendings-column {
-  flex: 1;               /* oba sloupce mají stejnou šířku */
+/* Hlavní kontejner */
+.page-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
-#income-column h3,
-#spendings-column h3 {
-  text-align: left;    /* nadpis uprostřed */
-  margin-bottom: 1rem;   /* mezera pod nadpisem */
-}
-
-input::placeholder {
+/* Header nahoře */
+header {
   text-align: center;
+  margin-bottom: 2rem;
+  max-width: 800px;     /* aby text nebyl jak nudle */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-input {
-  text-align: center; /* aby i uživatelský text byl uprostřed */
+/* Text v horním containeru */
+.budgetInfo {
+  border: rgb(17, 17, 31) 6px outset;
+  background: linear-gradient(250deg, #0d1b2a, #476192);  
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 1rem;
 }
 
-.field {
-    margin-bottom: 0.5rem; /* nebo 1.5rem, podle toho, jak moc chceš */
+/* Sloupce */
+.columns {
+  display: flex; /* použij flexbox pro rozložení sloupců vedle sebe */
+  gap: 9rem; /* mezera mezi sloupci */
+  align-items: stretch; /* zarovnat výšku sloupců */
+  /* flex-wrap: nowrap; nechci zalomení, pokud je prostor */
+}
+
+/* Levý sloupec */
+.left-column {
+	display: flex; /* použij flexbox pro vnitřní rozložení */
+    flex-direction: column; /* sloupce pod sebou */
+	justify-content: space-between; /* prostor mezi horním a spodním */
+    gap: 2rem; /* mezera mezi řádky */
+	flex: 1; 
+}
+
+.income-spendings {
+    display: flex; /* použij flexbox pro rozložení vedle sebe */
+    gap: 2rem; /* mezera mezi Income a Spendings */
+	justify-content: center; /* vycentrovat oba boxy */	
+	align-items: flex-start; /* zarovnat nahoře */
+}
+#income-column, #spendings-column {
+    flex: 1; /* oba boxy stejně široké */
+}
+
+.input {
+	margin-bottom: 1rem; /* mezera pod každým inputem */
+	border-radius: 0.5rem; /* zaoblené rohy */
+	padding: 0.5rem; /*	 odsazení uvnitř pole */
+	font-size: 1rem; /* velikost písma */
+	width: 100%; /*	 zabere celou šířku sloupce */
+	text-align: center; /* zarovnání textu uprostřed */
+	background-color: #1b263b; /* tmavé pozadí */
+	color: #f5f5f5; /* světlý text */
+	border: 2px solid #2a5298;
+	transition: all 0.3s ease; /* plynulý efekt při hover/focus */
+}
+
+.input:focus {
+  outline: none;
+  border-color: #4a90e2; /* výraznější modrá při focusu */
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);
+}
+
+.input:hover {
+  border-color: #3c6db5; /* jemná změna při hover */
+}
+
+/* Pravý sloupec: karta s grafem */
+.right-column {
+  flex: 1; /* zabere zbytek místa */
+}
+
+/* Tlačítko v levém sloupci */
+.button {
+    border: rgb(17, 17, 31) 6px outset;
+    border-radius: 1rem;
+	width: 70%;
+	margin-top: 1rem;
+    background-color: radial-gradient(circle at top left, #1e3c72, #2a5298);
+    color: rgb(14, 13, 13);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px; 
+    margin: 2rem auto;
+	display: block;
+    cursor: pointer;
+}
+
+/* graf */
+.chart-container {
+	width: 100%; 
+	max-width: 600px; 
+	height: 300px; 
 }

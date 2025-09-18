@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'MujFont';              /* název fontu, který pak použiješ */
+    /* src: url('../fonts/mujfont.ttf') format('ttf'); cesta k souboru */
+    src: url('Fonts/Montserrat-Italic.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* <link rel="stylesheet" href="./css/inputs.css"> */
